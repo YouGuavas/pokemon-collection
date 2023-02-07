@@ -1,13 +1,11 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '@/styles/Home.module.scss'
-import ItemGallery from '../components/ItemGallery';
+import ProductGallery from '../components/ProductGallery';
 
+import products from '../products.json';
 
 export default function Home() {
-  const listings: Array<object> = [{
-    title: 'Pokemon 1',
-  }];
+  
   return (
     <>
       <Head>
@@ -17,7 +15,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <ItemGallery listings={listings} />
+        <ProductGallery products={products} />
       </main>
     </>
   )
