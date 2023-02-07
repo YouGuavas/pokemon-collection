@@ -1,4 +1,5 @@
 import ProductListing from './ProductListing';
+import styles from '../styles/ProductGallery.module.scss';
 
 export default function Gallery(props: {products: Array<object>}) {
     const renderListings = () => {
@@ -7,7 +8,7 @@ export default function Gallery(props: {products: Array<object>}) {
         })
     }
     return(
-        <div>
+        <div className={styles.productGallery}>
             {renderListings()}
         </div>
     )

@@ -1,0 +1,14 @@
+.listCard {
+    padding: 0.5rem;
+    grid-column: span 1;
+    text-align: center;
+    font-family: sans-serif;
+    cursor: pointer;
+    h4 {
+        letter-spacing: 0.1rem;
+        font-weight: 100;
+    }
+    p {
+        font-weight: 100;
+    }
+}
