@@ -4,27 +4,31 @@
         "id": "sylveon_v_alt",
         "description": "Sylveon V alternate art from Evolving Skies, 184/203",
         "price": "65.00",
-        "image": "/images/sylveon_v_alt.jpg"
+        "image": "/images/sylveon_v_alt.jpg",
+        "stock": 1
     },
     {
         "title": "Galarian Zapdos V Alt Art",
         "id": "galarian_zapdos_v_alt",
         "description": "Galarian Zapdos V alternate art from Chilling Reign,",
         "price": "45.00",
-        "image": "/images/galarian_zapdos_v_alt.jpg"
+        "image": "/images/galarian_zapdos_v_alt.jpg",
+        "stock": 1
     },
     {
         "title": "Electrode Gold",
         "id": "electrode_gold",
         "description": "Electrode gold card from Chilling Reign, 222/198",
         "price": "17.00",
-        "image": "/images/electrode_gold.jpg"
+        "image": "/images/electrode_gold.jpg",
+        "stock": 3
     },
     {
         "title": "Peony Rainbow",
         "id": "peony_rainbow",
         "description": "Peony rainbow rare card from Chilling Reign, 220/198",
         "price": "10.00",
-        "image": "/images/peony_rainbow.jpg"
+        "image": "/images/peony_rainbow.jpg",
+        "stock": 4
     }
 ]

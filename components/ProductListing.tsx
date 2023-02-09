@@ -11,26 +11,45 @@ type product = {
     id: string,
     image: string,
     description: string,
-    price: string
+    price: string,
+    stock: number
 }
 export default function ProductListing(props: {product: product}) {
     const [quantity, setQuantity] = useState(1);
+
+    const renderStock = () => {
+        if (props.product.stock < 5) {
+            return <p>Hurry! Only {props.product.stock} in stock!</p>
+        }
+    }
+    
     useEffect(() => {
         if (document) {
-            const numberInput = (document.getElementById('number-input') as HTMLInputElement | null);
+            const numberInput = (document.getElementById(`number-input-${props.product.id}`) as HTMLInputElement | null);
             if (numberInput) {
-                numberInput.value = quantity.toString();
+                if (quantity >= 1) {
+                    if (quantity <= props.product.stock) {
+                        numberInput.value = quantity.toString();
+                    } else {
+                        setQuantity(props.product.stock)
+                    }
+                } else {
+                    setQuantity(1);
+                    //no non-whole values less than 1
+                }
             }
         }
     }, [quantity])
+
     return (
     <div className={styles.listCard}>
         <h4>{props.product.title}</h4>
         <Image src={props.product.image} alt={`Preview of ${props.product.title}`} height={200} width={150}/>
         <p>{props.product.description}</p>
         <p>${props.product.price}</p>
-        <CartQuantity quantity={quantity} setQuantity={setQuantity}/>
-        <CartButton productId={props.product.id} quantity={quantity} />
+        {renderStock()}
+        <CartQuantity quantity={quantity} setQuantity={setQuantity} productId={props.product.id} />
+        <CartButton productId={props.product.id} quantity={quantity} stock={props.product.stock}/>
     </div>
     )
 }

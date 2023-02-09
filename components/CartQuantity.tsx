@@ -1,4 +1,4 @@
-export default function CartQuantity(props: {quantity: number, setQuantity: Function}) {
+export default function CartQuantity(props: {quantity: number, setQuantity: Function, productId: string}) {
     const add = () => {
         props.setQuantity(props.quantity+1)
     }
@@ -12,20 +12,19 @@ export default function CartQuantity(props: {quantity: number, setQuantity: Func
         if (window) {
             if (e.target) {
                 if (e.target.value) {
-                    if (!Number.isNaN(Number(e.target.value))) {
+                    if (!Number.isNaN(Number(e.target.value)) && e.target.value%1 === 0) {
                         props.setQuantity(Number(e.target.value));
-                        //console.log(e.target.value);
-                    } 
-                } else {
-                    props.setQuantity(1);
-                }
+                    } else {
+                        props.setQuantity(0);
+                    }
+                } 
          }
         }
     }
     return (
         <div>
             <button onClick={subtract}>-</button>
-            <input id='number-input' type="text" defaultValue={props.quantity} onChange={handleInput} />
+            <input id={`number-input-${props.productId}`} type="text" defaultValue={props.quantity} onChange={handleInput} />
             <button onClick={add}>+</button>
         </div>
     )
