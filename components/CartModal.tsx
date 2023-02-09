@@ -5,7 +5,7 @@ export default function CartModal(props: {show: boolean}) {
     }
     return (
         <div className={styles.cartModal}>
-            Hi!
+            Successfully added to cart!
         </div>
     )
 }

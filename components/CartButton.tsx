@@ -3,8 +3,7 @@ export default function CartButton(props: {productId: string, quantity: number, 
     const handleShow = () => {
         if (!props.show) {
             props.setShow(true);
-        } else {
-            props.setShow(false);
+            setTimeout(() => {props.setShow(false)}, 1500);
         }
     }
 
@@ -42,9 +41,12 @@ export default function CartButton(props: {productId: string, quantity: number, 
             }
         
         }
-
-        localStorage.setItem('cart-storage', JSON.stringify(tempCartStorage));
-        handleShow();
+        try {
+            localStorage.setItem('cart-storage', JSON.stringify(tempCartStorage));
+            handleShow();
+        } catch(error) {
+            console.log(error);
+        }
 
     }
 
