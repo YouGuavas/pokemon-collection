@@ -5,7 +5,7 @@ import CartButton from './CartButton';
 import CartQuantity from './CartQuantity';
 import CartModal from './CartModal';
 
-import styles from '../styles/ProductListing.module.scss';
+import styles from '../../styles/ProductListing.module.scss';
 
 type product = {
     title: string,

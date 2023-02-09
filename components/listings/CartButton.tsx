@@ -1,7 +1,8 @@
 export default function CartButton(props: {productId: string, quantity: number, stock: number, show: boolean, setShow: Function}) {
     
-    const handleShow = () => {
-        if (!props.show) {
+    const handleShow = (show: boolean) => {
+        if (show && !props.show) {
+            //only show modal if user does not already have the entire stock in their cart
             props.setShow(true);
             setTimeout(() => {props.setShow(false)}, 1500);
         }
@@ -11,10 +12,13 @@ export default function CartButton(props: {productId: string, quantity: number, 
     const addToCart = (productId: string, quantity: number = 1, stock: number = 1) => {
         const cartStorage: any = localStorage.getItem('cart-storage');
         let tempCartStorage: {[productId: string]: number} = {};
+        let show: boolean = false;
         if (cartStorage !== null) {
             tempCartStorage = JSON.parse(cartStorage);
             
             if (tempCartStorage[productId]) {
+                if (tempCartStorage[productId] < stock) {show = true;}
+
                 if (tempCartStorage[productId] + quantity < stock) {
                     tempCartStorage[productId] += quantity;
                 } else {
@@ -28,6 +32,7 @@ export default function CartButton(props: {productId: string, quantity: number, 
                 } else {
                     tempCartStorage[productId] = stock;
                 }
+                show = true;
             }
 
         } 
@@ -39,11 +44,12 @@ export default function CartButton(props: {productId: string, quantity: number, 
             } else {
                 tempCartStorage[productId] = stock;
             }
+            show = true;
         
         }
         try {
             localStorage.setItem('cart-storage', JSON.stringify(tempCartStorage));
-            handleShow();
+            handleShow(show);
         } catch(error) {
             console.log(error);
         }

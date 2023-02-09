@@ -1,5 +1,5 @@
 import ProductListing from './ProductListing';
-import styles from '../styles/ProductGallery.module.scss';
+import styles from '../../styles/ProductGallery.module.scss';
 
 export default function Gallery(props: {products: Array<object>}) {
     const renderListings = () => {

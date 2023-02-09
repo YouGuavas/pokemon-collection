@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from '@/styles/Home.module.scss'
-import ProductGallery from '../components/ProductGallery';
+import ProductGallery from '../components/listings/ProductGallery';
 
 import products from '../products.json';
 
