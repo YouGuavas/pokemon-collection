@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react';
 
 import CartButton from './CartButton';
 import CartQuantity from './CartQuantity';
+import CartModal from './CartModal';
 
 import styles from '../styles/ProductListing.module.scss';
 
@@ -16,6 +17,7 @@ type product = {
 }
 export default function ProductListing(props: {product: product}) {
     const [quantity, setQuantity] = useState(1);
+    const [show, setShow] = useState(false);
 
     const renderStock = () => {
         if (props.product.stock < 5) {
@@ -49,7 +51,8 @@ export default function ProductListing(props: {product: product}) {
         <p>${props.product.price}</p>
         {renderStock()}
         <CartQuantity quantity={quantity} setQuantity={setQuantity} productId={props.product.id} />
-        <CartButton productId={props.product.id} quantity={quantity} stock={props.product.stock}/>
+        <CartModal show={show}/>
+        <CartButton productId={props.product.id} quantity={quantity} stock={props.product.stock} show={show} setShow={setShow}/>
     </div>
     )
 }
