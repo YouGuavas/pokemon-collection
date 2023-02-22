@@ -18,6 +18,7 @@ type product = {
 export default function ProductListing(props: {product: product}) {
     const [quantity, setQuantity] = useState(1);
     const [show, setShow] = useState(false);
+    const product = props.product;
 
     const renderStock = () => {
         if (props.product.stock < 5) {
@@ -53,6 +54,11 @@ export default function ProductListing(props: {product: product}) {
         <CartQuantity quantity={quantity} setQuantity={setQuantity} productId={props.product.id} />
         <CartModal show={show}/>
         <CartButton productId={props.product.id} quantity={quantity} stock={props.product.stock} show={show} setShow={setShow}/>
+        <button className="snipcart-add-item"
+  data-item-id={product.id}
+  data-item-image={product.image}
+  data-item-name={product.title}
+  data-item-price={product.price} >snipcart</button>
     </div>
     )
 }
