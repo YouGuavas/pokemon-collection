@@ -1,3 +1,4 @@
+import styles from '../../styles/CartQuantity.module.scss';
 export default function CartQuantity(props: {quantity: number, setQuantity: Function, productId: string}) {
     const add = () => {
         props.setQuantity(props.quantity+1)
@@ -22,9 +23,10 @@ export default function CartQuantity(props: {quantity: number, setQuantity: Func
         }
     }
     return (
-        <div>
+        <div className={styles.cartQuantity}>
             <button onClick={subtract}>-</button>
-            <input id={`number-input-${props.productId}`} type="text" defaultValue={props.quantity} onChange={handleInput} />
+            <label htmlFor='quantity'>Quantity</label>
+            <input name='quantity' id={`number-input-${props.productId}`} type="text" defaultValue={props.quantity} onChange={handleInput} />
             <button onClick={add}>+</button>
         </div>
     )

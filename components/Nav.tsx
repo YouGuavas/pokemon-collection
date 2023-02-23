@@ -14,7 +14,6 @@ export default function Nav() {
             <Link href="/">Home</Link>
             <Link href="#" className="snipcart-checkout snipcart-summary">
                 <FaShoppingCart />
-                <strong className="sr-only">Cart</strong>
                 <span className="snipcart-total-price">
                 {new Intl.NumberFormat("en-US", {
                     style: "currency",
