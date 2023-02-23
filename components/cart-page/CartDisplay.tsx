@@ -1,5 +1,4 @@
 import CartCard from './CartCard';
-import {useState, useEffect} from 'react';
 
 export default function CartDisplay(props: {cartItems: {}, products: Array<object>, total: number, setTotal: Function}) {
     const renderCartItems = () => {

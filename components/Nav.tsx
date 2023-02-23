@@ -6,6 +6,7 @@ export default function Nav() {
     const [total, setTotal] = useState(0);
     useEffect(() => {
         if (window.Snipcart) {
+            console.log('wild');
             setTotal(Snipcart.store.getState().cart.total);
         }
     })
