@@ -6,21 +6,36 @@
     grid-column: span 1;
     text-align: center;
     font-family: sans-serif;
+    background-color: $bgColor-default;
     @media only screen and (max-width: $md-max) { 
         grid-column: span 4;
     }
     h4 {
+        font-size: 0.8rem;
         letter-spacing: 0.05rem;
         font-weight: 100;
-        overflow-x: hidden;
+        margin: 0.4rem;
+        @media only screen and (max-width: $md-max) { 
+            font-size: 1rem;
+        }
     }
     p {
         font-weight: 100;
+        margin: 0.4rem;
     }
     button {
         padding: 0.5rem;
         cursor: pointer;
         font-weight: 200;
         letter-spacing: 0.05rem;
+        background-color: royalblue;
+        border: none;
+        margin: 0.4rem;
     }
+    input {
+        background-color: white;
+        border: none;
+        color: black;
+    }
+    
 }

@@ -1,5 +1,6 @@
 .productGallery {
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 25vw);
-    grid-gap: 0.2rem;
+    grid-template-columns: repeat(4, 25%);
+    grid-gap: 0.4rem;
 }

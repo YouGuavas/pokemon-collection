@@ -22,7 +22,7 @@ export default function ProductListing(props: {product: product}) {
 
     const renderStock = () => {
         if (props.product.stock < 5) {
-            return <p>Hurry! Only {props.product.stock} in stock!</p>
+            return <p>Hurry! Only {props.product.stock} left!</p>
         }
     }
     
@@ -48,10 +48,10 @@ export default function ProductListing(props: {product: product}) {
     <div className={styles.listCard}>
         <h4>{props.product.title}</h4>
         <Image src={props.product.image} alt={`Preview of ${props.product.title}`} height={200} width={150}/>
-        <p>{props.product.description}</p>
+        {/*<p>{props.product.description}</p>*/}
         <p>${props.product.price}</p>
         {renderStock()}
-        <CartQuantity quantity={quantity} setQuantity={setQuantity} productId={props.product.id} />
+        {/*<CartQuantity quantity={quantity} setQuantity={setQuantity} productId={props.product.id} />*/}
         <CartModal show={show}/>
         {/*<CartButton productId={props.product.id} quantity={quantity} stock={props.product.stock} show={show} setShow={setShow}/>*/}
         <button className="snipcart-add-item"
