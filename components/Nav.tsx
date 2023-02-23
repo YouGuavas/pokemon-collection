@@ -12,12 +12,16 @@ export default function Nav() {
     return (
         <nav>
             <Link href="/">Home</Link>
-            <Link href="#" className="snipcart-checkout snipcart-summary"><FaShoppingCart /><span className="snipcart-total-price">
-              {new Intl.NumberFormat("en-US", {
-                style: "currency",
-                currency: "USD",
-              }).format(total)}
-            </span> </Link>
+            <Link href="#" className="snipcart-checkout snipcart-summary">
+                <FaShoppingCart />
+                <strong className="sr-only">Cart</strong>
+                <span className="snipcart-total-price">
+                {new Intl.NumberFormat("en-US", {
+                    style: "currency",
+                    currency: "USD",
+                }).format(total)}
+                </span>
+            </Link>
         </nav>
     )
 }
