@@ -1,11 +1,18 @@
+@import '../utils/variables';
+
+
 .listCard {
     padding: 0.5rem;
     grid-column: span 1;
     text-align: center;
     font-family: sans-serif;
+    @media only screen and (max-width: $md-max) { 
+        grid-column: span 4;
+    }
     h4 {
-        letter-spacing: 0.1rem;
+        letter-spacing: 0.05rem;
         font-weight: 100;
+        overflow-x: hidden;
     }
     p {
         font-weight: 100;
