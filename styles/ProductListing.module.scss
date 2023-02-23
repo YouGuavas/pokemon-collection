@@ -28,9 +28,13 @@
         cursor: pointer;
         font-weight: 200;
         letter-spacing: 0.05rem;
-        background-color: royalblue;
+        background-color: $bgColor-buttonPrimary;
         border: none;
         margin: 0.4rem;
+        transition: 0.4s;
+        &:hover {
+            background-color: $bgColor-buttonPrimary-hover;
+        }
     }
     input {
         background-color: white;
