@@ -2,14 +2,18 @@ import Link from 'next/link';
 import {FaShoppingCart} from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 
+declare global {
+    interface Window {
+        Snipcart: any;
+    }
+}
 export default function Nav() {
     const [total, setTotal] = useState(0);
     useEffect(() => {
         if (window.Snipcart) {
-            console.log('wild');
-            setTotal(Snipcart.store.getState().cart.total);
+            setTotal(window.Snipcart.store.getState().cart.total);
         }
-    })
+    }, [])
     return (
         <nav>
             <Link href="/">Home</Link>
