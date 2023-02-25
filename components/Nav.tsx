@@ -2,6 +2,8 @@ import Link from 'next/link';
 import {FaShoppingCart} from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 
+import styles from '../styles/Nav.module.scss';
+
 declare global {
     interface Window {
         Snipcart: any;
@@ -15,7 +17,7 @@ export default function Nav() {
         }
     }, [])
     return (
-        <nav>
+        <nav className={styles.nav}>
             <Link href="/">Home</Link>
             <Link href="#" className="snipcart-checkout snipcart-summary">
                 <FaShoppingCart />
