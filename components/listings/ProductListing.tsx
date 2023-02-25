@@ -38,7 +38,7 @@ export default function ProductListing(props: {product: product}) {
         data-item-name={product.title}
         data-item-price={product.price}
         data-item-url='/'
-        data-item-max-quantity={product.stock} >snipcart</button>
+        data-item-max-quantity={product.stock}>Add to cart</button>
     </div>
     )
 }
