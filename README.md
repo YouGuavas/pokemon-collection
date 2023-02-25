@@ -10,7 +10,7 @@ git clone https://github.com/YouGuavas/pokemon-shop.git && cd pokemon-shop
 2. Install packages: 
 
 ```bash
-npm i
+npm install
 # or
 yarn install
 ```
