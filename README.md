@@ -16,9 +16,9 @@ yarn install
 ```
 
 3. Update index.tsx line 25 with your snipcart API key:
-
-      <div hidden id="snipcart" data-api-key="[YOUR-API-KEY-HERE]" />
-
+```html
+<div hidden id="snipcart" data-api-key="[YOUR-API-KEY-HERE]" />
+```
 
 4. Start up the development server:
 
