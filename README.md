@@ -1,4 +1,4 @@
-This is a project built with React, Sass, and Typescript.
+This is a project built with [React](https://reactjs.org/), [Sass](https://sass-lang.com/), [Typescript](https://www.typescriptlang.org/), and using [Snipcart](https://snipcart.com/).
 
 ## Getting Started
 
