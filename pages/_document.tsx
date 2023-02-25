@@ -1,5 +1,4 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import Nav from '../components/Nav';
 
 export default function Document() {
   return (
@@ -10,7 +9,6 @@ export default function Document() {
         <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.2.2/default/snipcart.css" />
       </Head>
       <body>
-        <Nav />
         <Main />
         <NextScript />
       </body>

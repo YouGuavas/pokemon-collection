@@ -17,8 +17,7 @@ export default function Nav() {
         }
     }, [])
     return (
-        <nav className={styles.nav}>
-            <Link href="/">Home</Link>
+        <nav className={styles.Nav}>
             <Link href="#" className="snipcart-checkout snipcart-summary">
                 <FaShoppingCart />
                 <span className="snipcart-total-price">

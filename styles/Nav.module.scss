@@ -1,5 +1,9 @@
 @import '../utils/variables';
 
-.nav {
+.Nav {
     display: flex;
+    width: 100%;
+    justify-content: right;
+    padding: 0 6rem;
+   
 }

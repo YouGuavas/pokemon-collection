@@ -1,5 +1,7 @@
 import Head from 'next/head'
 import styles from '@/styles/Home.module.scss'
+import Nav from '../components/Nav';
+
 import ProductGallery from '../components/listings/ProductGallery';
 
 import products from '../products.json';
@@ -15,6 +17,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         
       </Head>
+      <Nav />
+
       <main className={styles.main}>
         <ProductGallery products={products} />
       </main>
