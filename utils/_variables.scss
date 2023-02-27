@@ -2,20 +2,13 @@ $lg-max: 1366px;
 $md-max: 900px;
 $sm-max: 400px;
 
-$bgColor-default: hsl(210, 10%, 11%);
-$bgColor-alt: hsl(210, 10%, 9%);
-$color-default: hsl(0, 0%, 90%);
-$color-alt: hsl(0, 0%, 50%);
-$bgColor-buttonPrimary: hsl(220, 70%, 22%);
-$bgColor-buttonPrimary-hover: hsl(220, 70%, 30%);
 
-
-#snipcart {
+#snipcart, #body {
     /* ----------------- 
         Colors
     ----------------- */
-    --color-default: $color-default;
-    --color-alt: $color-alt;
+    --color-default: hsl(0, 0%, 90%);
+    --color-alt: hsl(0, 0%, 50%);
     --color-icon: hsl(200, 90%, 40%);
     --color-success: hsl(144, 50%, 55%);
     --color-error: hsl(6, 55%, 60%);
@@ -108,8 +101,8 @@ $bgColor-buttonPrimary-hover: hsl(220, 70%, 30%);
     /* ----------------- 
         Background colors
     ----------------- */
-    --bgColor-default: $bgColor-default;
-    --bgColor-alt: $bgColor-alt;
+    --bgColor-default: hsl(210, 10%, 11%);
+    --bgColor-alt: hsl(210, 10%, 9%);
     --bgColor-success: hsl(144, 70%, 15%);
     --bgColor-error: hsl(6, 50%, 15%);
     --bgColor-info: hsl(210, 55%, 15%);
@@ -130,8 +123,8 @@ $bgColor-buttonPrimary-hover: hsl(220, 70%, 30%);
     --bgColor-input-error: var(--bgColor-input);
     --bgColor-input-autofill: hsl(210, 60%, 15%);
   
-    --bgColor-buttonPrimary: $bgColor-buttonPrimary;
-    --bgColor-buttonPrimary-hover: $bgColor-buttonPrimary-hover;
+    --bgColor-buttonPrimary: hsl(220, 70%, 22%);
+    --bgColor-buttonPrimary-hover: hsl(220, 70%, 30%);
     --bgColor-buttonPrimary-active: var(--bgColor-buttonPrimary);
     --bgColor-buttonPrimary-focus: var(--bgColor-buttonPrimary);
     --bgColor-buttonPrimary-disabled: hsl(210, 10%, 25%);

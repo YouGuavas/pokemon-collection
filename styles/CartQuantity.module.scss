@@ -9,7 +9,6 @@
     grid-template-columns: 5;
     grid-template-rows: 2;
     label {
-        //display: block;
         grid-column: span 5 / span 5;
         grid-row: start 1 / end 1;
     }

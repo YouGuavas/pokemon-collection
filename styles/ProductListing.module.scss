@@ -6,7 +6,7 @@
     grid-column: span 1;
     text-align: center;
     font-family: sans-serif;
-    background-color: $bgColor-default;
+    background-color: var(--bgColor-default);
     @media only screen and (max-width: $md-max) { 
         grid-column: span 4;
     }
@@ -28,12 +28,12 @@
         cursor: pointer;
         font-weight: 200;
         letter-spacing: 0.05rem;
-        background-color: $bgColor-buttonPrimary;
+        background-color: var(--bgColor-buttonPrimary);
         border: none;
         margin: 0.4rem;
         transition: 0.4s;
         &:hover {
-            background-color: $bgColor-buttonPrimary-hover;
+            background-color: var(--bgColor-buttonPrimary-hover);
         }
     }
     input {

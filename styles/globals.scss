@@ -34,7 +34,7 @@ body {
 
 body {
   padding: 0 2rem;
-  background: $bgColor-alt;
+  background: var(--bgColor-alt);
 }
 
 a {
