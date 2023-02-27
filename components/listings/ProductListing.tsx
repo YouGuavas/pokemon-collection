@@ -17,6 +17,8 @@ export default function ProductListing(props: {product: product}) {
     const renderStock = () => {
         if (props.product.stock < 2) {
             return <p>Hurry! Only {props.product.stock} left!</p>
+        } else {
+            return <p></p>
         }
     }
     

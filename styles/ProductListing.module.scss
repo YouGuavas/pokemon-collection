@@ -5,10 +5,22 @@
     padding: 0.5rem;
     grid-column: span 1;
     text-align: center;
+    align-items: center;
+    justify-content: center;
     font-family: sans-serif;
     background-color: var(--bgColor-default);
+    display: grid;
+    grid-template-rows: 5;
+    grid-template-columns: 1;
     @media only screen and (max-width: $md-max) { 
         grid-column: span 4;
+    }
+    img, h4, p, button {
+        grid-row: span 1;
+        grid-column: span 1;
+    }
+    img { 
+        margin: 0 auto;
     }
     h4 {
         font-size: 0.8rem;
@@ -30,8 +42,10 @@
         letter-spacing: 0.05rem;
         background-color: var(--bgColor-buttonPrimary);
         border: none;
-        margin: 0.4rem;
+        margin: 0.4rem auto;
         transition: 0.4s;
+        height: 2rem;
+        width: 8rem;
         &:hover {
             background-color: var(--bgColor-buttonPrimary-hover);
         }
