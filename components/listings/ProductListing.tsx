@@ -1,7 +1,5 @@
 import Image from 'next/image'
-import {useState} from 'react';
 
-import CartModal from './CartModal';
 
 import styles from '../../styles/ProductListing.module.scss';
 
@@ -14,11 +12,10 @@ type product = {
     stock: number
 }
 export default function ProductListing(props: {product: product}) {
-    const [show, setShow] = useState(false);
     const product = props.product;
 
     const renderStock = () => {
-        if (props.product.stock < 5) {
+        if (props.product.stock < 2) {
             return <p>Hurry! Only {props.product.stock} left!</p>
         }
     }
@@ -31,7 +28,6 @@ export default function ProductListing(props: {product: product}) {
         <Image src={props.product.image} alt={`Preview of ${props.product.title}`} height={200} width={150}/>
         <p>${props.product.price}</p>
         {renderStock()}
-        <CartModal show={show}/>
         <button className="snipcart-add-item"
         data-item-id={product.id}
         data-item-image={product.image}
