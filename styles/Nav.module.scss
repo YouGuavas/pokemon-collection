@@ -4,6 +4,9 @@
     display: flex;
     width: 100%;
     justify-content: right;
-    padding: 0 6rem;
+    padding: 0 1rem;
+    @media screen and (min-width: $md-max) {
+        padding: 0 6rem;
+    }
    
 }
