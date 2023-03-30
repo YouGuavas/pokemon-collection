@@ -7,7 +7,7 @@ import ProductGallery from '../components/listings/ProductGallery';
 import products from '../products.json';
 
 export default function Home() {
-  
+
   return (
     <>
       <Head>
@@ -15,11 +15,11 @@ export default function Home() {
         <meta name="description" content="Pokemon shop" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        
+
       </Head>
-      <Nav />
 
       <main className={styles.main}>
+        <Nav />
         <ProductGallery products={products} />
       </main>
       <footer className={styles.footer}>
@@ -27,7 +27,7 @@ export default function Home() {
       </footer>
       <script async src="https://cdn.snipcart.com/themes/v3.2.2/default/snipcart.js" />
       <div hidden id="snipcart" data-api-key="OGU2OWMwOGMtNjM2Mi00MWEyLTlhYmUtYjA1MTA4YzY5MzNkNjM4MTI3MDA4NDE3MzEzOTgy" />
-    
+
     </>
   )
 }

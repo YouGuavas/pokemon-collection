@@ -1,6 +1,7 @@
 @import '../utils/variables';
 
-:root {
+:root,
+#snipcart {
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
@@ -10,7 +11,6 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  --bgColor-default: black;
 
   --callout-rgb: 238, 240, 241;
   --callout-border-rgb: 172, 175, 176;
@@ -21,31 +21,40 @@
         Colors
     ----------------- */
   --color-default: hsl(0, 0%, 90%);
-  --color-alt: hsl(0, 0%, 70%);
-  --color-icon: hsl(200, 90%, 40%);
-  --color-success: hsl(144, 50%, 55%);
+  --color-alt: hsl(0, 0%, 80%);
+  --color-third: hsl(0, 0%, 20%);
+  --color-icon: hsl(150, 70%, 40%);
+  --color-icon-hover: hsl(150, 70%, 60%);
+  --color-success: hsl(150, 50%, 55%);
   --color-error: hsl(6, 55%, 60%);
 
-  --color-link: hsl(220, 70%, 55%);
-  --color-link-hover: hsl(220, 70%, 65%);
+  --color-link: hsl(150, 55%, 50%);
+  --color-link-hover: hsl(150, 70%, 65%);
   --color-link-active: var(--color-link);
   --color-link-focus: var(--color-link);
 
 
   @media (prefers-color-scheme: dark) {
-    --color-default: rgb(0, 0, 0);
-    --color-alt: rgb(100, 100, 100);
-    --color-link-hover: #53744f;
+    --color-default: hsl(0, 0%, 60%);
+    --color-alt: hsl(0, 0%, 20%);
+    --color-third: hsl(0, 0%, 90%);
+
+
+    --color-icon: hsl(150, 70%, 30%);
+    --color-icon-hover: hsl(150, 70%, 20%);
+
+    --color-link: hsl(150, 55%, 20%);
+    --color-link-hover: hsl(150, 55%, 30%);
+
     --color-4: rgba(220, 220, 220, 0.6);
-    --color-5: rgba(0, 0, 0, 0.3);
-    --color-link: rgb(30, 40, 30);
+
 
     --semi-transparent: 70%;
     --medium-transparent: 55%;
   }
 
-
-  --color-input: var(--color-default);
+  --color-modal: var(--color-third);
+  --color-input: var(--color-third);
   --color-input-hover: var(--color-input);
   --color-input-focus: var(--color-input);
   --color-input-checked: var(--color-input);
@@ -61,16 +70,16 @@
   --color-inputIcon-error: var(--color-error);
   --color-inputPlaceholder: var(--color-alt);
 
-  --color-buttonPrimary: var(--color-default);
-  --color-buttonPrimary-hover: hsl(0, 0%, 100%);
+  --color-buttonPrimary: var(--color-third);
+  --color-buttonPrimary-hover: var(--color-third);
   --color-buttonPrimary-active: var(--color-buttonPrimary);
   --color-buttonPrimary-focus: var(--color-buttonPrimary);
   --color-buttonPrimary-disabled: var(--color-alt);
   --color-buttonPrimary-success: var(--color-buttonPrimary);
   --color-buttonPrimary-error: var(--color-buttonPrimary);
 
-  --color-buttonSecondary: var(--color-icon);
-  --color-buttonSecondary-hover: hsl(200, 90%, 50%);
+  --color-buttonSecondary: var(--color-third);
+  --color-buttonSecondary-hover: var(--color-third);
   --color-buttonSecondary-active: var(--color-buttonSecondary);
   --color-buttonSecondary-focus: var(--color-buttonSecondary);
   --color-buttonSecondary-disabled: hsl(210, 10%, 25%);
@@ -128,14 +137,15 @@
   /* ----------------- 
         Background colors
     ----------------- */
-  --bgColor-default: var(--color-alt);
-  --bgColor-alt: var(--color-default);
+  --bgColor-default: var(--color-default);
+  --bgColor-alt: var(--color-alt);
   --bgColor-success: hsl(144, 70%, 15%);
   --bgColor-error: hsl(6, 50%, 15%);
-  --bgColor-info: hsl(210, 55%, 15%);
+  --bgColor-info: var(--color-icon);
+  --bgColor-info-hover: var(--color-icon-hover);
 
-  --bgColor-modal: hsl(210, 10%, 7%);
-  --bgColor-modalVeil: hsla(210, 10%, 7%, .75);
+  --bgColor-modal: var(--bgColor-alt); //hsl(210, 10%, 7%);
+  --bgColor-modalVeil: var(--bgColor-alt); //hsla(210, 10%, 7%, .75);
 
   --bgColor-link: none;
   --bgColor-link-hover: none;
@@ -143,7 +153,7 @@
   --bgColor-link-focus: hsl(210, 55%, 10%);
 
 
-  --bgColor-input: hsl(210, 10%, 10%);
+  --bgColor-input: var(--color-alt);
   --bgColor-input-hover: var(--bgColor-input);
   --bgColor-input-focus: var(--bgColor-input);
   --bgColor-input-checked: var(--borderColor-input-hover);
@@ -160,7 +170,7 @@
   --bgColor-buttonPrimary-error: hsl(6, 60%, 35%);
 
   --bgColor-buttonSecondary: var(--bgColor-info);
-  --bgColor-buttonSecondary-hover: hsl(210, 60%, 18%);
+  --bgColor-buttonSecondary-hover: var(--bgColor-info-hover);
   --bgColor-buttonSecondary-active: var(--bgColor-buttonSecondary);
   --bgColor-buttonSecondary-focus: var(--bgColor-buttonSecondary);
   --bgColor-buttonSecondary-disabled: hsl(210, 10%, 9%);
@@ -230,16 +240,16 @@
   margin: 0;
 }
 
+
+
 html,
 body {
   max-width: 100vw;
   max-height: 100vh;
-  padding: 2rem;
   overflow-x: hidden;
 }
 
 body {
-  padding: 0 2rem;
   background: var(--bgColor-alt);
 }
 
@@ -247,6 +257,24 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+#snipcart {
+  color: var(--color-third);
+}
+
+.snipcart-modal__close-title {
+  color: var(--color-third);
+}
+
+.snipcart-cart__footer {
+  color: var(--color-third);
+
+  div {
+    color: inherit;
+  }
+}
+
+
 
 @media (prefers-color-scheme: dark) {
   html {

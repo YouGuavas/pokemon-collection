@@ -12,48 +12,61 @@
     display: grid;
     grid-template-rows: 5;
     grid-template-columns: 1;
-    @media only screen and (max-width: $md-max) { 
+
+    @media only screen and (max-width: $md-max) {
         grid-column: span 4;
     }
-    img, h4, p, button {
+
+    img,
+    h4,
+    p,
+    button {
         grid-row: span 1;
         grid-column: span 1;
     }
-    img { 
+
+    img {
         margin: 0 auto;
     }
+
     h4 {
         font-size: 0.8rem;
         letter-spacing: 0.05rem;
         font-weight: 100;
         margin: 0.4rem;
-        @media only screen and (max-width: $md-max) { 
+
+        @media only screen and (max-width: $md-max) {
             font-size: 1rem;
         }
     }
+
     p {
         font-weight: 100;
         margin: 0.4rem;
     }
+
     button {
         padding: 0.5rem;
         cursor: pointer;
         font-weight: 200;
         letter-spacing: 0.05rem;
         background-color: var(--bgColor-buttonPrimary);
+        color: var(--color-buttonPrimary);
         border: none;
         margin: 0.4rem auto;
         transition: 0.4s;
         height: 2rem;
         width: 8rem;
+
         &:hover {
             background-color: var(--bgColor-buttonPrimary-hover);
         }
     }
+
     input {
         background-color: white;
         border: none;
         color: black;
     }
-    
+
 }
