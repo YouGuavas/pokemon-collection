@@ -11,32 +11,32 @@ type product = {
     price: string,
     stock: number
 }
-export default function ProductListing(props: {product: product}) {
+export default function ProductListing(props: { product: product }) {
     const product = props.product;
 
     const renderStock = () => {
         if (props.product.stock < 2) {
-            return <p>Hurry! Only {props.product.stock} left!</p>
+            return <p className={styles.hurry}>Hurry! Only {props.product.stock} left!</p>
         } else {
             return <p></p>
         }
     }
-    
-    
+
+
 
     return (
-    <div className={styles.listCard}>
-        <h4>{props.product.title}</h4>
-        <Image src={props.product.image} alt={`Preview of ${props.product.title}`} height={200} width={150}/>
-        <p>${props.product.price}</p>
-        {renderStock()}
-        <button className="snipcart-add-item"
-        data-item-id={product.id}
-        data-item-image={product.image}
-        data-item-name={product.title}
-        data-item-price={product.price}
-        data-item-url='/'
-        data-item-max-quantity={product.stock}>Add to cart</button>
-    </div>
+        <div className={styles.listCard}>
+            <h4>{props.product.title}</h4>
+            <Image src={props.product.image} alt={`Preview of ${props.product.title}`} height={200} width={150} />
+            <p>${props.product.price}</p>
+            {renderStock()}
+            <button className="snipcart-add-item"
+                data-item-id={product.id}
+                data-item-image={product.image}
+                data-item-name={product.title}
+                data-item-price={product.price}
+                data-item-url='/'
+                data-item-max-quantity={product.stock}>Add to cart</button>
+        </div>
     )
 }
