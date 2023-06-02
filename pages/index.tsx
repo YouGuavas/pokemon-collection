@@ -23,7 +23,7 @@ export default function Home() {
         <ProductGallery products={products} />
       </main>
       <footer className={styles.footer}>
-        &copy; YouGuavas
+        &copy; Patrick Yambrick 2023
       </footer>
       <script async src="https://cdn.snipcart.com/themes/v3.2.2/default/snipcart.js" />
       <div hidden id="snipcart" data-api-key="OGU2OWMwOGMtNjM2Mi00MWEyLTlhYmUtYjA1MTA4YzY5MzNkNjM4MTI3MDA4NDE3MzEzOTgy" />
