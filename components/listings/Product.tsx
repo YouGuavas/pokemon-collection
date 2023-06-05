@@ -3,14 +3,6 @@ import Image from 'next/image'
 
 import styles from '../../styles/ProductListing.module.scss';
 
-type product = {
-    title: string,
-    id: string,
-    image: string,
-    description: string,
-    price: string,
-    stock: number
-}
 interface ProductProps {
     id: number;
     name: string;
