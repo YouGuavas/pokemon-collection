@@ -1,13 +1,14 @@
-import ProductListing from './ProductListing';
+import Product from './Product';
 import styles from '../../styles/ProductGallery.module.scss';
 
-export default function Gallery(props: {products: Array<object>}) {
+export default function Gallery(props: { products: Array<object> }) {
     const renderListings = () => {
         return props.products.map((product: object | any, index: number) => {
-            return <ProductListing key={index} product={product}/>
+            const { id, title, image, price, stock } = product;
+            return <Product stock={stock} key={index} id={id} name={title} image={image} price={price} />
         })
     }
-    return(
+    return (
         <div className={styles.productGallery}>
             {renderListings()}
         </div>
