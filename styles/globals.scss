@@ -244,7 +244,16 @@ a {
 		color: inherit;
 	}
 }
-
+.snipcart-typeahead__suggestion--active {
+	background-color: var(--color-alt);
+}
+section.snipcart-cart-summary__content {
+	background-color: var(--color-alt);
+}
+li.snipcart-cart-summary-item,
+.snipcart-summary-fees {
+	color: var(--color-third);
+}
 @media (prefers-color-scheme: dark) {
 	html {
 		color-scheme: dark;
