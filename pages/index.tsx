@@ -17,10 +17,20 @@ export default function Home() {
 			</Head>
 
 			<main className={styles.main}>
+				<div
+					hidden
+					id="snipcart"
+					data-api-key={process.env.NEXT_PUBLIC_SNIPCART_API}
+					data-config-modal-style="side"
+				></div>
 				<Nav />
 				<ProductGallery products={products} />
 			</main>
 			<footer className={styles.footer}>&copy; Patrick Yambrick 2023</footer>
+			<script
+				async
+				src="https://cdn.snipcart.com/themes/v3.2.1/default/snipcart.js"
+			></script>
 		</>
 	);
 }

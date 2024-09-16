@@ -12,26 +12,6 @@ declare global {
 	}
 }
 export default function Nav() {
-	const [count, setCount] = useState(0);
-	useEffect(() => {
-		if (window.Snipcart) {
-			console.log(window);
-			setCount(window.Snipcart.store.getState().cart.items.count);
-		}
-	}, []);
-
-	useEffect(() => {
-		if (count > 0) {
-			renderCount();
-		}
-	}, []);
-
-	const renderCount = () => {
-		const link = grabElement('snipcart-link');
-		const newSpan = create('span');
-		newSpan.innerHTML = count;
-		addToParent(link, newSpan);
-	};
 	return (
 		<header id={styles.Nav} className={`${styles.Nav}`}>
 			<div>
@@ -42,13 +22,13 @@ export default function Nav() {
 					<Link href="#">Pokemon</Link>
 				</li>
 				<li>
-					<Link
+					<button
 						id="snipcart-link"
-						href="#"
 						className={`${styles.snipcartLink} snipcart-checkout snipcart-summary`}
 					>
 						<FaShoppingCart />
-					</Link>
+						<span className="snipcart-items-count"></span>
+					</button>
 				</li>
 			</ul>
 		</header>
